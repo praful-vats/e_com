@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Landing Page</h1>
+
+        {% if is_authenticated %}
+            <!-- Show this if the user is logged in -->
+            <a href="{% url 'dashboard' %}">Dashboard</a> | 
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <!-- Show this if the user is not logged in -->
+            <a href="{% url 'login' %}">Login</a> | 
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </header>
+
+    <section>
+        <h2>Explore the Website</h2>
+        <p>Welcome to our awesome website. You can explore our features once you log in.</p>
+    </section>
+</body>
+</html>
